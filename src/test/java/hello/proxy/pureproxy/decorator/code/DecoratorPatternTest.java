@@ -14,11 +14,24 @@ public class DecoratorPatternTest {
     }
 
     @Test
-    void decorator() {
+    void decorator1() {
 
-        RealComponent realComponent = new RealComponent();
+        Component realComponent = new RealComponent();
         MessageDecorator decorator = new MessageDecorator(realComponent);
         DecoratorPatternClient client = new DecoratorPatternClient(decorator);
+
+        client.execute();
+
+    }
+
+    @Test
+    void decorator2() {
+
+        Component realComponent = new RealComponent();
+        Component messageDecorator = new MessageDecorator(realComponent);
+        Component timeDecorator = new TimeDecorator(messageDecorator);
+
+        DecoratorPatternClient client = new DecoratorPatternClient(timeDecorator);
 
         client.execute();
 
