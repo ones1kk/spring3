@@ -1,13 +1,13 @@
 package hello.proxy.pureproxy.decorator.code;
 
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
-@RequiredArgsConstructor
 @Slf4j
-public class MessageDecorator implements Component {
+public class MessageDecorator extends Decorator {
 
-    private final Component component;
+    public MessageDecorator(Component component) {
+        super(component);
+    }
 
     @Override
     public String operation() {
