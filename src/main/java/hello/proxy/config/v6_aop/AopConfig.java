@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Import;
 public class AopConfig {
 
     @Bean
-    public LogTraceAspect logTraceAspect(LogTrace logTrace) {
+    public LogTraceAspect logTraceAspect(LogTrace logTrace){
         return new LogTraceAspect(logTrace);
     }
 }
